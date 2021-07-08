@@ -7,7 +7,7 @@ node() {
     def appFrontend
     try {	
 	stage('Cleanup') {
-		cleanWs()
+		//cleanWs()
 	}
 	
         stage('Checkout') {
