@@ -3,7 +3,7 @@
 project_name = 'sample'
 uniqueId = "${env.BUILD_NUMBER}"
 
-node('Docker_linux') {
+node() {
     def appFrontend
     try {	
 		stage('Cleanup') {
