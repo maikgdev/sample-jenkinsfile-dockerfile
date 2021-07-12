@@ -12,10 +12,11 @@ node() {
 	
         stage('Checkout') {
             sh 'docker version'
+            checkout scm
         }
 
         stage('D:Image') {
-		appFrontend = docker.build("${project_name}:${uniqueId}-fe", "-f Dockerfile .")
+            appFrontend = docker.build("${project_name}:${uniqueId}-fe", "-f Dockerfile .")
         }
 		
 	stage ('D:B&D Frontend') {
