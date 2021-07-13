@@ -1,1 +1,1 @@
-coonsole.log("Jawohl!");
+console.log("Jawohl!");
