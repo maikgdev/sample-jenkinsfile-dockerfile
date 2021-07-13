@@ -1,1 +1,1 @@
-echo "Jawohl!";
+coonsole.log("Jawohl!");
