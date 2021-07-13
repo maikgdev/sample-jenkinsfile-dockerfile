@@ -21,11 +21,9 @@ node() {
 		
 	stage ('D:B&D Frontend') {
 		appFrontend.inside ("-u 0:0") {
-			dir(project_name)  {
-				sh '''
-	       				node index.js
-				'''
-			}
+			sh '''
+       				node index.js
+			'''
 		}
 	}
 
