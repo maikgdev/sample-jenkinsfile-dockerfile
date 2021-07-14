@@ -1,0 +1,27 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: nodejs-hello-world
+  namespace: businessapps
+  annotations:
+    networking.k8s.io/v1: Ingress
+    nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: 'false'
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/configuration-snippet: |-
+      proxy_ssl_server_name on;
+      proxy_ssl_name $host;
+    nginx.ingress.kubernetes.io/force-ssl-redirect: 'false'
+    nginx.ingress.kubernetes.io/ssl-passthrough: 'false'
+spec:
+  tls:
+    - hosts:
+        - nodejs-hello-world.k8s.me
+  rules:
+    - host: nodejs-hello-world.k8s.me
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: nodejs-hello-world
+              servicePort: 3000

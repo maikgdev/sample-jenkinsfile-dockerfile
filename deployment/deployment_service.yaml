@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs-hello-world
+  namespace: businessapps
+  annotations:
+    meta.helm.sh/release-name: nodejs-hello-world
+    meta.helm.sh/release-namespace: businessapps
+spec:
+  ports:
+    - name: service
+      protocol: TCP
+      port: 80
+      targetPort: 3000
+  selector:
+    app: nodejs-hello-world
+  type: ClusterIP
