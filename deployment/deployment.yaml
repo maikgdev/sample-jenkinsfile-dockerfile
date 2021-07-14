@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-hello-world
+  namespace: businessapps
+  labels:
+    app: nodejs-hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-hello-world
+  template:
+    metadata:
+      labels:
+        app: nodejs-hello-world
+    spec:
+      containers:
+      - name: nodejs-hello-world
+        image: heroku/nodejs-hello-world:latest
+        ports:
+        - containerPort: 3000
