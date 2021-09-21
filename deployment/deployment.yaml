@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nodejs-hello-world
-        image: heroku/nodejs-hello-world:latest
+        image: blizzard2k8/docker-nodejs-hello-world:0.1
         ports:
         - containerPort: 3000
