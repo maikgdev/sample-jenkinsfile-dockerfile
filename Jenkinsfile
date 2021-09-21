@@ -32,11 +32,11 @@ node() {
 	}
     
 	stage('Publish')  {
-	    def Creds = "d69b67e6-961c-40fa-b739-aae404c023f3"
-	    withDockerRegistry([credentialsId: "${Creds}", url: 'https://index.docker.io/v1/']) {
-		sh "docker tag ${project_name}:${uniqueId} blizzard2k8/jenkins-docker-publish:${uniqueId} "
-            	sh "docker push blizzard2k8/jenkins-docker-publish:${uniqueId}"
-	    }
+	    //def Creds = "d69b67e6-961c-40fa-b739-aae404c023f3"
+	    //withDockerRegistry([credentialsId: "${Creds}", url: 'https://index.docker.io/v1/']) {
+		//sh "docker tag ${project_name}:${uniqueId} blizzard2k8/jenkins-docker-publish:${uniqueId} "
+            	//sh "docker push blizzard2k8/jenkins-docker-publish:${uniqueId}"
+	    //}
 	}
 
 
