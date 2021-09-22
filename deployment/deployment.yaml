@@ -20,3 +20,10 @@ spec:
         image: blizzard2k8/docker-nodejs-hello-world:0.2
         ports:
         - containerPort: 3000
+        resources:
+              requests:
+                cpu: 25m
+                memory: 64Mi
+              limits:
+                cpu: 410m
+                memory: 512Mi
